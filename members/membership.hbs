@@ -24,13 +24,15 @@
         >
 
             {{#get
-                "tiers" include="monthly_price,benefits" limit="all"
+                "tiers" include="monthly_price,benefits" limit="100"
                 as |tiers|
             }}
                 {{#foreach tiers}}
                     <div
                         class="plan-box plab-box-{{name}}
                             p-8 shadow-lg lg:col-span-4 bg-gray-100"
+                        data-tier="{{slug}}"
+                        style="--tier-accent-color: {{#if type 'free'}}var(--color-free-tier){{else}}var(--color-paid-tier){{/if}};"
                     >
                         <header class="plan-box-header">
                             <h3

@@ -26,7 +26,7 @@
                 {{#get
                     "posts"
                     filter="tags:{{tags.[0].slug}}"
-                    limit="all"
+                    limit="100"
                     order="published_at asc"
                 }}
                     {{!-- {{#get "posts" filter="tags:{{primary_tag.slug}}" limit="all" order="published_at asc"}} --}}

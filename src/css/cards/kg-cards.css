@@ -1,0 +1,294 @@
+/* KG Cards
+ * ---------------------------------------------------------- */
+
+.kg-width-wide {
+    grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+    grid-column: full-start / full-end;
+}
+
+.kg-width-full img {
+    width: 100%;
+}
+
+
+/* Callout Card */
+.kg-callout-card {
+    display: flex;
+    padding: 1.2em 1.6em;
+    margin: 1.5em 0;
+    border-radius: 3px;
+    background: #f4f8fb;
+}
+
+.kg-callout-card-emoji {
+    padding-right: 1em;
+    line-height: 1.3em;
+    font-size: 1.3em;
+}
+
+.kg-callout-card-text {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6em;
+}
+
+/* Toggle Card */
+.kg-toggle-card {
+    background: transparent;
+    box-shadow: inset 0 0 0 1px rgba(124, 139, 154, 0.25);
+    border-radius: 4px;
+    padding: 1.2em;
+    margin: 1.5em 0;
+}
+
+.kg-toggle-card-icon {
+    height: 24px;
+    width: 24px;
+    margin-left: 1em;
+    transition: transform 0.3s ease;
+}
+
+.kg-toggle-card[data-kg-card-state="close"] .kg-toggle-card-icon {
+    transform: rotate(-90deg);
+}
+
+.kg-toggle-heading-text {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.kg-toggle-content {
+    margin-top: 1em;
+    font-size: 1rem;
+    line-height: 1.6em;
+}
+
+/* Header Card */
+.kg-header-card {
+    padding: 6em 4em;
+    margin: 1.5em 0;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.kg-header-card.kg-size-small {
+    padding: 4em;
+}
+
+.kg-header-card.kg-size-large {
+    padding: 8em 4em;
+}
+
+.kg-header-card-header {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin: 0;
+    line-height: 1.1em;
+}
+
+.kg-header-card-subheader {
+    font-size: 1.2rem;
+    margin-top: 0.5em;
+    opacity: 0.8;
+    line-height: 1.5em;
+}
+
+.kg-header-card.kg-style-image {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.kg-header-card.kg-style-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    border-radius: 4px;
+}
+
+.kg-header-card.kg-style-image > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Button Card */
+.kg-btn-card {
+    margin: 1.5em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.kg-btn {
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+    background-color: var(--ghost-accent-color, #15171a);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.kg-btn:hover {
+    opacity: 0.8;
+}
+
+.kg-btn-accent {
+    background-color: var(--ghost-accent-color, #15171a);
+}
+
+/* Product Card */
+.kg-product-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 0 0 1px rgba(124, 139, 154, 0.25);
+    margin: 1.5em 0;
+}
+
+.kg-product-card-container {
+    flex: 1;
+}
+
+.kg-product-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.kg-product-card-description {
+    font-size: 1rem;
+    color: #738a94;
+    line-height: 1.5em;
+}
+
+.kg-product-card-description p {
+    margin: 0;
+}
+
+.kg-product-card-image {
+    width: 100%;
+    max-width: 280px;
+    margin-left: 20px;
+    border-radius: 4px;
+}
+
+.kg-product-card-rating-star {
+    height: 16px;
+    width: 16px;
+    fill: #f2a900;
+}
+
+/* Audio Card */
+.kg-audio-card {
+    display: flex;
+    width: 100%;
+    box-shadow: inset 0 0 0 1px rgba(124, 139, 154, 0.25);
+    padding: 0.5em;
+    border-radius: 3px;
+    margin: 1.5em 0;
+}
+
+.kg-audio-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.kg-audio-player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 1em;
+}
+
+.kg-audio-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+/* File Card */
+.kg-file-card {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    border-radius: 3px;
+    border: 1px solid rgba(124, 139, 154, 0.25);
+    margin: 1.5em 0;
+}
+
+.kg-file-card-icon {
+    height: 32px;
+    width: 32px;
+    margin-right: 1em;
+}
+
+.kg-file-card-contents {
+    flex-grow: 1;
+}
+
+.kg-file-card-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.kg-file-card-caption {
+    font-size: 0.8rem;
+    color: #738a94;
+}
+
+/* Video Card */
+.kg-video-card {
+    position: relative;
+    margin: 1.5em 0;
+}
+
+.kg-video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.kg-video-card video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Dark Mode Overrides */
+html.dark .kg-callout-card {
+    background: #262626;
+    color: #fff;
+}
+
+html.dark .kg-toggle-card {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+html.dark .kg-product-card {
+    background: #191b1f;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+html.dark .kg-product-card-description {
+    color: #ccc;
+}

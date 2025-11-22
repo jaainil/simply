@@ -6,10 +6,11 @@
 
     {{#if feature_image}}
     <a href="{{url}}" class="storySmall-link flex flex-col grow">
-        <img class="storySmall-img object-cover w-full h-48 blur-up lazyload"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-            data-srcset="{{img_url feature_image size="xs"}} 100w,{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
-            data-sizes="auto"
+        <img class="storySmall-img object-cover w-full h-48"
+            src="{{img_url feature_image size="m"}}"
+            srcset="{{img_url feature_image size="xs"}} 100w,{{img_url feature_image size="s"}} 300w,{{img_url feature_image size="m"}} 600w"
+            sizes="(max-width: 600px) 100vw, 350px"
+            loading="lazy"
             width="350"
             height="192"
             alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"

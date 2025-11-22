@@ -46,6 +46,7 @@
 /* Cards
 /* ---------------------------------------------------------- */
 
+@import "cards/kg-cards.css";
 @import "./cards/cards.css";
 @import "./cards/gallery.css";
 @import "./cards/blockquote.css";

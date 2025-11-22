@@ -52,17 +52,8 @@
 
         {{!-- Author Facebook and Twitter --}}
         <div class="author-follow buttons justify-center mt-8">
-            {{#if facebook}}
-            <a href="{{facebook_url}}" title="Facebook" class="button text-white bg-transparent hover:text-white hover:bg-transparent" target="_blank" rel="noopener noreferrer">
-                <svg class="icon"><use xlink:href="#icon-facebook"></use></svg>
-                </a>
-            {{/if}}
-
-            {{#if twitter}}
-            <a href="{{twitter_url}}" title="{{twitter}}" class="button text-white bg-transparent hover:text-white hover:bg-transparent" target="_blank" rel="noopener noreferrer">
-                <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
-            </a>
-            {{/if}}
+            {{#if facebook}}<a href="{{social_url type="facebook"}}" class="button is-white" title="Facebook" target="_blank" rel="noopener noreferrer"><svg class="icon"><use xlink:href="#icon-facebook"></use></svg></a>{{/if}}
+            {{#if twitter}}<a href="{{social_url type="twitter"}}" class="button is-white" title="{{twitter}}" target="_blank" rel="noopener noreferrer"><svg class="icon"><use xlink:href="#icon-twitter"></use></svg></a>{{/if}}
         </div>
     </article>
 </div>

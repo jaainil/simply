@@ -35,6 +35,10 @@
   --color-link: var(--ghost-accent-color);
 
   --border-color: #e2ecec;
+  
+  /* Tiers */
+  --color-free-tier: var(--gray-500);
+  --color-paid-tier: var(--color-primary);
 
   /* gray */
   --gray-100: $gray-100;

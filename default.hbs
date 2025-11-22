@@ -69,7 +69,7 @@
     {{!-- Block for Headers --}}
     {{{block "header"}}}
 </head>
-<body class="{{block "special_body_class"}}">
+<body class="{{block "special_body_class"}} font-{{#if @custom.body_font}}{{@custom.body_font}}{{else}}system{{/if}}">
     <div class="simply-viewport flex flex-col justify-start">
         {{!-- Header Content with User Account ./partials/layout/header-user-account.hbs --}}
         {{#match @custom.header "Default"}}{{> "layout/header"}}{{/match}}

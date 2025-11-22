@@ -13,7 +13,9 @@
             </div>
 
             {{!-- Footer Menu --}}
+            {{#match @custom.secondary_navigation_layout "Footer"}}
             {{#if @site.secondary_navigation}}<div class="mx-8">{{navigation type="secondary"}}</div>{{/if}}
+            {{/match}}
 
             {{!-- Social Media - partilas/widget/social-media.hbs --}}
             {{> "widget/social-media" class="footer-social-media mt-8 flex-none lg:mt-0 is-inline"}}
