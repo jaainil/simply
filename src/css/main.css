@@ -2,11 +2,116 @@
 /* ---------------------------------------------------------- */
 @import "./abstracts/variables.css";
 @import "./base/root.css";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "../.";
+@source "./partials/**/*.hbs";
+
+@theme {
+  --font-sans: var(--gh-font-heading), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: var(--gh-font-body), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-blank: var(--blank);
+  --color-dark: #110f16;
+  --color-global: var(--text-global);
+  --color-mark: var(--color-mark);
+  --color-orange: #f42;
+  --color-dark-blue-500: #102b7b;
+  --color-logo: var(--header-text-link);
+  --color-header-link: var(--header-text-link);
+  --color-primary: var(--ghost-accent-color);
+  --color-secondary: #102b7b;
+  --color-modal: rgba(84,102,109,.6);
+  --color-title: var(--title-color);
+  --color-success: #48c774;
+  --color-warning: #ffdd57;
+  --color-danger: #f14668;
+
+  --color-facebook: #4267B2;
+  --color-twitter: #55acee;
+  --color-youtube: #FF0000;
+  --color-linkedin: #007bb6;
+  --color-instagram: #bf32a8;
+  --color-whatsapp: #64d448;
+
+  --color-gray-100: var(--gray-100);
+  --color-gray-150: var(--gray-150);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-gray-900: var(--gray-900);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1000px;
+  --breakpoint-xl: 1232px;
+
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --spacing-88: 22rem;
+  --spacing-96: 24rem;
+  --spacing-128: 32rem;
+  --spacing-vw8: 8vw;
+  --spacing-vw4: 4vw;
+  --spacing-vw6: 6vw;
+  --spacing-vmin8: 8vmin;
+
+  --shadow-3xl: 0 36px 64px 0 rgba(0,0,0,.2);
+  --shadow-4xl: inset 0 0 0 0.1rem rgb(58 3 45 / 8%), 0 10px 20px rgb(58 3 45 / 4%), 0 2px 6px rgb(58 3 45 / 4%), 0 0 1px rgb(58 3 45 / 4%);
+  --shadow-card-primary: inset 0 0 0 0.1rem var(--color-primary), 0 10px 20px rgb(58 3 45 / 4%), 0 2px 6px rgb(58 3 45 / 4%), 0 0 1px rgb(58 3 45 / 4%);
+
+  --z-0: 0;
+  --z-1: 1;
+  --z-2: 2;
+  --z-3: 3;
+  --z-4: 4;
+  --z-10: 10;
+  --z-20: 20;
+  --z-50: 50;
+
+  --text-22: 1.375rem;
+  --text-32: 2rem;
+  --text-44: 2.75rem;
+
+  --opacity-15: 0.15;
+  --opacity-40: 0.4;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-92: 0.92;
+
+  --max-width-1100: 68.75rem;
+  --max-width-extreme: 81.25rem;
+
+  --min-height-96: 24rem;
+  --min-height-lg: 32rem;
+
+  --max-height-128: 32rem;
+  --max-height-screen-16: calc(100vh - 4rem);
+
+  --height-88: 22rem;
+  --height-128: 32rem;
+
+  --inset-16: 4rem;
+  --inset-24: 6rem;
+  --inset-32: 8rem;
+
+  --border-width-3: 0.1875rem;
+
+  --grid-cols-sidebar: 1fr 22.5rem;
+  --grid-cols-kusi2: calc(12.5rem + 4vmin) 1fr;
+  --grid-cols-kusi3: calc(12.5rem + 4vmin) 1fr calc(13.75rem + 2vmin);
+}
 
 /* base
 /* ---------------------------------------------------------- */
 
-@import "tailwindcss/base";
 @import "./abstracts/extend.css";
 @import "./base/base.css";
 @import "./base/typography.css";
@@ -17,8 +122,6 @@
 
 /* Components
 /* ---------------------------------------------------------- */
-
-@import "tailwindcss/components";
 
 /* Elements
 /* ---------------------------------------------------------- */
@@ -46,7 +149,7 @@
 /* Cards
 /* ---------------------------------------------------------- */
 
-@import "cards/kg-cards.css";
+@import "./cards/kg-cards.css";
 @import "./cards/cards.css";
 @import "./cards/gallery.css";
 @import "./cards/blockquote.css";
@@ -54,8 +157,6 @@
 
 /* Utilities
 /* ---------------------------------------------------------- */
-
-@import "tailwindcss/utilities";
 
 /* Layout
 /* ---------------------------------------------------------- */

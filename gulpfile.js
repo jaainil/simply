@@ -22,14 +22,12 @@ const merge = require("merge-stream");
 
 // postcss plugins
 const cssnano = require("cssnano");
-const autoprefixer = require("autoprefixer");
 const comments = require("postcss-discard-comments");
 const simpleExtend = require("postcss-extend");
-const tailwindcss = require("tailwindcss");
+const tailwindcss = require("@tailwindcss/postcss");
 // const lol = require('postcss-advanced-variables')
 const postImport = require("postcss-import");
 const precss = require("precss");
-const postNesting = require("tailwindcss/nesting"); // postcss-nested
 
 // sass
 // const sass = require('gulp-sass')(require('sass'))
@@ -86,15 +84,23 @@ const handleError = (done) => {
 // }
 
 const postcssPluginsDev = [
-  postImport(),
+  postImport({
+    onImport() {},
+    warnWhenNotFound: false
+  }),
   simpleExtend(),
   precss(),
-  postNesting(),
+  (root, result) => {
+    const messages = result.messages.filter(m => 
+      !m.text || !m.text.includes('@import must precede')
+    );
+    result.messages.length = 0;
+    messages.forEach(m => result.messages.push(m));
+  },
   tailwindcss(),
 ];
 
 const postcssPluginsPro = [
-  autoprefixer(),
   cssnano(),
   comments({ removeAll: true }),
 ];

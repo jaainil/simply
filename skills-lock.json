@@ -16,6 +16,11 @@
       "sourceType": "github",
       "computedHash": "6573207135314a0f4c748523b0826ac2d02f74669ba36f6f0809c9be3687d2b3"
     },
+    "migrating-from-v3": {
+      "source": "djankies/claude-configs",
+      "sourceType": "github",
+      "computedHash": "03f049315df26d1a6415163c91a896a33e99345a403447d6298aa93e7bb591be"
+    },
     "tailwind-design-system": {
       "source": "wshobson/agents",
       "sourceType": "github",
