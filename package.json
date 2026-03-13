@@ -202,13 +202,19 @@
     "lint": "yarn lint:js && yarn lint:css",
     "test": "yarn lint && gscan .",
     "scan": "gscan .",
-    "deploy": "gulp deploy"
+    "deploy": "gulp deploy",
+    "release": "semantic-release",
+    "release:dry": "semantic-release --dry-run"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/plugin-transform-runtime": "^7.29.0",
     "@babel/preset-env": "^7.29.0",
     "@babel/runtime": "^7.28.6",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/typography": "^0.5.19",
@@ -247,6 +253,7 @@
     "postcss-nested": "^7.0.2",
     "precss": "^4.0.0",
     "pump": "^3.0.4",
+    "semantic-release": "^25.0.3",
     "standard": "^17.1.2",
     "stylelint": "^17.4.0",
     "stylelint-config-recommended": "^18.0.0",

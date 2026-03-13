@@ -6,6 +6,11 @@
       "sourceType": "github",
       "computedHash": "529e2ee02bf6e2adece466e7148b9288182637fefc3b5d4f3eeb18e12906445c"
     },
+    "ci-cd-best-practices": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "computedHash": "16c5f5bafd768c74bbf75b69b2d73c7fe2f2915ce57774ae4c6d7b285fd5d357"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
@@ -20,6 +25,11 @@
       "source": "djankies/claude-configs",
       "sourceType": "github",
       "computedHash": "03f049315df26d1a6415163c91a896a33e99345a403447d6298aa93e7bb591be"
+    },
+    "semantic-release": {
+      "source": "terrylica/cc-skills",
+      "sourceType": "github",
+      "computedHash": "43da7c11ae3958d804f45f667c93472b93f27e6426e0cb3fcd5b604181f01031"
     },
     "tailwind-design-system": {
       "source": "wshobson/agents",
