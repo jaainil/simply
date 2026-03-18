@@ -21,6 +21,11 @@
       "sourceType": "github",
       "computedHash": "6573207135314a0f4c748523b0826ac2d02f74669ba36f6f0809c9be3687d2b3"
     },
+    "json-ld-schemas": {
+      "source": "canatufkansu/claude-skills",
+      "sourceType": "github",
+      "computedHash": "1dd9ab16f59d4f699b303590800814534e99d83824fb40aa8f1505cab4f67f31"
+    },
     "migrating-from-v3": {
       "source": "djankies/claude-configs",
       "sourceType": "github",

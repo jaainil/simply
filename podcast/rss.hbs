@@ -19,8 +19,8 @@ xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0">
         <itunes:author>{{@site.title}}</itunes:author>
         <itunes:summary>{{@site.description}}</itunes:summary>
         <itunes:owner>
-            <itunes:name>Your Name</itunes:name>
-            <itunes:email>youremail@example.com</itunes:email>
+            <itunes:name>{{@site.title}}</itunes:name>
+            <itunes:email>{{@site.twitter}}{{!-- Set your contact email in Ghost Admin > General > Email address, or hardcode here --}}</itunes:email>
         </itunes:owner>
         <itunes:explicit>clean</itunes:explicit>
         <itunes:image href="{{img_url @site.icon absolute="true"}}"/>

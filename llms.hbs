@@ -1,0 +1,103 @@
+# {{@site.title}}
+
+> {{@site.description}}
+
+- Source: {{@site.url}}
+- Full content: {{@site.url}}/llms-full.txt
+
+---
+
+## Site Information
+
+- Title: {{@site.title}}
+- Description: {{@site.description}}
+- URL: {{@site.url}}
+- Language: {{@site.locale}}
+{{#if @site.twitter}}- Twitter: https://twitter.com/{{@site.twitter}}{{/if}}
+{{#if @site.facebook}}- Facebook: https://www.facebook.com/{{@site.facebook}}{{/if}}
+
+---
+
+## Posts
+
+{{#get "posts" limit="100" order="published_at desc" filter="tag:-[hash-portfolio,hash-kusi-doc,hash-podcast]" include="tags,authors"}}
+{{#foreach posts}}
+- [{{title}}]({{url absolute="true"}}){{#if custom_excerpt}}: {{custom_excerpt}}{{/if}}
+  - Published: {{date format="YYYY-MM-DD"}}
+  - Updated: {{date updated_at format="YYYY-MM-DD"}}
+  {{#if primary_tag}}- Topic: {{primary_tag.name}}{{/if}}
+  {{#if reading_time}}- Reading time: {{reading_time}}{{/if}}
+  - Authors: {{#foreach authors}}{{name}}{{#unless @last}}, {{/unless}}{{/foreach}}
+
+{{/foreach}}
+{{/get}}
+
+---
+
+## Documentation
+
+{{#get "posts" limit="100" order="published_at asc" filter="tag:[hash-kusi-doc]" include="tags"}}
+{{#foreach posts}}
+- [{{title}}]({{url absolute="true"}}){{#if custom_excerpt}}: {{custom_excerpt}}{{/if}}
+{{/foreach}}
+{{else}}
+(No documentation articles)
+{{/get}}
+
+---
+
+## Portfolio
+
+{{#get "posts" limit="100" order="published_at desc" filter="tag:[hash-portfolio]" include="tags"}}
+{{#foreach posts}}
+- [{{title}}]({{url absolute="true"}}){{#if custom_excerpt}}: {{custom_excerpt}}{{/if}}
+{{/foreach}}
+{{else}}
+(No portfolio items)
+{{/get}}
+
+---
+
+## Podcast
+
+{{#get "posts" limit="100" order="published_at desc" filter="tag:[hash-podcast]" include="tags"}}
+{{#foreach posts}}
+- [{{title}}]({{url absolute="true"}}){{#if custom_excerpt}}: {{custom_excerpt}}{{/if}}
+  - Published: {{date format="YYYY-MM-DD"}}
+{{/foreach}}
+{{else}}
+(No podcast episodes)
+{{/get}}
+
+---
+
+## Tags
+
+{{#get "tags" limit="100" order="count.posts desc" include="count.posts"}}
+{{#foreach tags}}
+{{#if count.posts}}- [{{name}}]({{url absolute="true"}}) ({{count.posts}} posts){{#if description}}: {{description}}{{/if}}
+{{/if}}
+{{/foreach}}
+{{/get}}
+
+---
+
+## Authors
+
+{{#get "authors" limit="100" include="count.posts"}}
+{{#foreach authors}}
+- [{{name}}]({{url absolute="true"}}){{#if bio}}: {{bio}}{{/if}}{{#if count.posts}} — {{count.posts}} posts{{/if}}
+{{/foreach}}
+{{/get}}
+
+---
+
+## Navigation
+
+{{#foreach navigation}}
+- [{{label}}]({{url absolute="true"}})
+{{/foreach}}
+
+---
+
+Generated: {{date format="YYYY-MM-DDTHH:mm:ssZ"}}

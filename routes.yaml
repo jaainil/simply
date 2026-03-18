@@ -1,4 +1,13 @@
 routes:
+  # LLM-friendly content endpoints
+  /llms.txt:
+    template: llms
+    content_type: text/plain
+
+  /llms-full.txt:
+    template: llms-full
+    content_type: text/plain
+
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
@@ -9,43 +18,48 @@ routes:
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     limit: 12
     template: godo-template-featured
-    # Optional for metada for seo
-    # data: page.home-featured
+    data: page.featured
 
   /archive/:
     controller: channel
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     limit: all
     template: godo-archive
+    data: page.archive
 
   /grid/:
     controller: channel
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     limit: 12
     template: godo-template-grid
+    data: page.grid
 
   /sidebar/:
     controller: channel
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     limit: 12
     template: godo-template-sidebar
+    data: page.sidebar
 
   /medium/:
     controller: channel
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     template: godo-template-medium
     limit: 14
+    data: page.medium
 
   /featured-slider/:
     controller: channel
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     template: godo-template-featured-slider
+    data: page.featured-slider
 
   /photographer/:
     controller: channel
     filter: "tag:-[hash-portfolio,hash-kusi-doc]"
     template: godo-template-photographer
     limit: 12
+    data: page.photographer
 
   /personal/:
     template: godo-home-personal
@@ -64,10 +78,10 @@ routes:
 
 collections:
   # PortFolio
-  /portafolio/:
-    permalink: /portafolio/{slug}/
+  /portfolio/:
+    permalink: /portfolio/{slug}/
     filter: "tag:[hash-portfolio]"
-    data: page.porftfolio
+    data: page.portfolio
     template: godo-template-portfolio
     limit: all
 

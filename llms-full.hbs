@@ -1,0 +1,117 @@
+# {{@site.title}} — Full Content Index
+
+> {{@site.description}}
+
+- Source: {{@site.url}}
+- Index only: {{@site.url}}/llms.txt
+
+---
+
+## Site Information
+
+- Title: {{@site.title}}
+- Description: {{@site.description}}
+- URL: {{@site.url}}
+- Language: {{@site.locale}}
+{{#if @site.twitter}}- Twitter: https://twitter.com/{{@site.twitter}}{{/if}}
+{{#if @site.facebook}}- Facebook: https://www.facebook.com/{{@site.facebook}}{{/if}}
+
+---
+
+## Posts — Full Content
+
+{{#get "posts" limit="100" order="published_at desc" filter="tag:-[hash-portfolio,hash-kusi-doc,hash-podcast]" include="tags,authors"}}
+{{#foreach posts}}
+---
+
+### {{title}}
+
+- URL: {{url absolute="true"}}
+- Published: {{date format="YYYY-MM-DD"}}
+- Updated: {{date updated_at format="YYYY-MM-DD"}}
+- Authors: {{#foreach authors}}{{name}}{{#unless @last}}, {{/unless}}{{/foreach}}
+{{#if primary_tag}}- Topic: {{primary_tag.name}}{{/if}}
+{{#if tags}}- Tags: {{#foreach tags}}{{name}}{{#unless @last}}, {{/unless}}{{/foreach}}{{/if}}
+{{#if reading_time}}- Reading time: {{reading_time}}{{/if}}
+{{#if custom_excerpt}}
+**Summary:** {{custom_excerpt}}
+{{/if}}
+
+{{content}}
+
+{{/foreach}}
+{{/get}}
+
+---
+
+## Documentation — Full Content
+
+{{#get "posts" limit="100" order="published_at asc" filter="tag:[hash-kusi-doc]" include="tags,authors"}}
+{{#foreach posts}}
+---
+
+### {{title}}
+
+- URL: {{url absolute="true"}}
+- Published: {{date format="YYYY-MM-DD"}}
+- Updated: {{date updated_at format="YYYY-MM-DD"}}
+{{#if custom_excerpt}}
+**Summary:** {{custom_excerpt}}
+{{/if}}
+
+{{content}}
+
+{{/foreach}}
+{{else}}
+(No documentation articles)
+{{/get}}
+
+---
+
+## Portfolio — Full Content
+
+{{#get "posts" limit="100" order="published_at desc" filter="tag:[hash-portfolio]" include="tags,authors"}}
+{{#foreach posts}}
+---
+
+### {{title}}
+
+- URL: {{url absolute="true"}}
+- Published: {{date format="YYYY-MM-DD"}}
+{{#if custom_excerpt}}
+**Summary:** {{custom_excerpt}}
+{{/if}}
+
+{{content}}
+
+{{/foreach}}
+{{else}}
+(No portfolio items)
+{{/get}}
+
+---
+
+## Podcast — Full Content
+
+{{#get "posts" limit="100" order="published_at desc" filter="tag:[hash-podcast]" include="tags,authors"}}
+{{#foreach posts}}
+---
+
+### {{title}}
+
+- URL: {{url absolute="true"}}
+- Published: {{date format="YYYY-MM-DD"}}
+{{#if custom_excerpt}}
+**Summary:** {{custom_excerpt}}
+{{/if}}
+
+{{content}}
+
+{{/foreach}}
+{{else}}
+(No podcast episodes)
+{{/get}}
+
+---
+
+Generated: {{date format="YYYY-MM-DDTHH:mm:ssZ"}}

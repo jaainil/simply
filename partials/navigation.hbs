@@ -2,7 +2,7 @@
 {{#if isSecondary}}
 
 <nav class="menu-secondary">
-    <ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" role="menu">
+    <ul itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu">
 
         {{#foreach navigation}}
         <li itemprop="name" role="menuitem" class="inline-block {{#unless @last}}separator{{/unless}}">
@@ -36,7 +36,7 @@
 
 <nav class="header-center mainMenu relative flex items-center pr-5 grow overflow-auto lg:overflow-visible">
     <ul itemscope
-        itemtype="http://www.schema.org/SiteNavigationElement"
+        itemtype="https://schema.org/SiteNavigationElement"
         class="nav hidden lg:flex whitespace-nowrap">
 
         {{#foreach navigation}}

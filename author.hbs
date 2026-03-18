@@ -1,6 +1,63 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
+{{!-- SEO: ProfilePage + BreadcrumbList JSON-LD for author archives --}}
+{{#author}}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "ProfilePage",
+            "@id": "{{url absolute='true'}}#webpage",
+            "url": "{{url absolute='true'}}",
+            "name": "{{name}}",
+            {{#if bio}}"description": "{{bio}}",{{/if}}
+            "inLanguage": "{{@site.locale}}",
+            "isPartOf": {
+                "@type": "WebSite",
+                "@id": "{{@site.url}}/#website",
+                "url": "{{@site.url}}",
+                "name": "{{@site.title}}"
+            },
+            "mainEntity": {
+                "@type": "Person",
+                "@id": "{{url absolute='true'}}#person",
+                "name": "{{name}}"{{#if bio}},
+                "description": "{{bio}}"{{/if}}{{#if profile_image}},
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "{{img_url profile_image size='s' absolute='true'}}"
+                }{{/if}}{{#if website}},
+                "url": "{{website}}"{{/if}}{{#if location}},
+                "address": "{{location}}"{{/if}}{{#if facebook}},
+                "sameAs": ["{{social_url type='facebook'}}"{{#if twitter}}, "{{social_url type='twitter'}}"{{/if}}]{{else}}{{#if twitter}},
+                "sameAs": ["{{social_url type='twitter'}}"]{{/if}}{{/if}}
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "{{url absolute='true'}}#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "{{@site.title}}",
+                    "item": "{{@site.url}}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "{{name}}",
+                    "item": "{{url absolute='true'}}"
+                }
+            ]
+        }
+    ]
+}
+</script>
+{{/author}}
+
 {{#author}}
 
 {{!-- custom Styles For tag <body> --}}

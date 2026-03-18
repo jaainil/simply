@@ -1,6 +1,49 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
+{{!-- SEO: BreadcrumbList + CollectionPage JSON-LD for tag archives --}}
+{{#tag}}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "@id": "{{url absolute='true'}}#webpage",
+            "url": "{{url absolute='true'}}",
+            "name": "{{name}}",
+            {{#if description}}"description": "{{description}}",{{/if}}
+            "inLanguage": "{{@site.locale}}",
+            "isPartOf": {
+                "@type": "WebSite",
+                "@id": "{{@site.url}}/#website",
+                "url": "{{@site.url}}",
+                "name": "{{@site.title}}"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "{{url absolute='true'}}#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "{{@site.title}}",
+                    "item": "{{@site.url}}"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "{{name}}",
+                    "item": "{{url absolute='true'}}"
+                }
+            ]
+        }
+    ]
+}
+</script>
+{{/tag}}
+
 {{#tag}}
 
 {{!-- custom Styles For tag <body> --}}

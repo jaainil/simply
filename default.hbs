@@ -63,6 +63,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset "styles/main.css"}}"/>
     {{!-- <style>{{> "main-styles"}}</style> --}}
 
+    {{!-- LLM-friendly content discovery links --}}
+    <link rel="alternate" type="text/plain" title="{{@site.title}} — LLM Index" href="{{@site.url}}/llms.txt">
+    <link rel="alternate" type="text/plain" title="{{@site.title}} — LLM Full Content" href="{{@site.url}}/llms-full.txt">
+
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
 
