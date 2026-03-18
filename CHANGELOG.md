@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/jaainil/simply/compare/v1.0.1...v1.0.2) (2026-03-18)
+
+
+### Bug Fixes
+
+* SEO improvements, LLM endpoints, and gscan compatibility ([b8cf139](https://github.com/jaainil/simply/commit/b8cf139453c9209924d8f7a0d968d58e61c723ed)), closes [#if](https://github.com/jaainil/simply/issues/if) [#match](https://github.com/jaainil/simply/issues/match)
+
 ## [1.0.1](https://github.com/jaainil/simply/compare/v1.0.0...v1.0.1) (2026-03-13)
 
 # 1.0.0 (2026-03-13)
